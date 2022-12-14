@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check(arr, a) {
+            let count = 0;
+            for (let i = 0; i <= arr.length; i++) {
+                if (a == arr[i]) {
+                    count += 1;
+                }
+            }
+            if (count != 0) {
+                return document.write('so ' + a + ' xuat hien ' + count + ' lan');
+            } else {
+                return document.write('so nay khong co trong mang')
+            }
+
+        }
+        let arr = [1, 2, 4, 6, 6, 8];
+        let x = +prompt('nhap vao so x: ');
+        check(arr, x);
+    </script>
+</body>
+</html>

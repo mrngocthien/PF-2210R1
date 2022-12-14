@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('Nhap vao so a: ');
+        let b = +prompt('Nhap vao so b: ');
+        let c = +prompt('Nhap vao so c: ');
+        function getMin(a, b, c) {
+            let min = a;
+            min = min > b ? b : min;
+            min = min > c ? c : min;
+            return min
+        }
+        alert(getMin(a, b, c));
+    </script>
+</body>
+</html>
