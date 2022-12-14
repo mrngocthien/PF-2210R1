@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice6</title>
+</head>
+<style>
+     
+</style>
+<body>
+    <input type="text" id="inp">
+    <input type="button" value="Tinh" onclick="tinh()">
+    <h3 id="rs"></h3>
+    <script>
+        //switch case function
+        function tinh() {
+            let year = +document.getElementById('inp').value;
+            let can = '';
+            let chi = '';
+            switch(year % 10) {
+                case 0:
+                    can = 'canh';
+                    break;
+                case 1:
+                    can = 'tân';
+                    break;
+                case 2:
+                    can = 'nhâm';
+                    break;
+                case 3:
+                    can = 'quý';
+                    break;
+                case 4:
+                    can = 'giáp';
+                    break;
+                case 5:
+                    can = 'ất';
+                    break;
+                case 6:
+                    can = 'bính';
+                    break;
+                case 7:
+                    can = 'đinh';
+                    break;
+                case 8:
+                    can = 'mậu';
+                    break;
+                case 9:
+                    can = 'kỷ';
+                    break;
+            }
+            switch(year % 12) {
+                case 0:
+                    chi = 'thân';
+                    break;
+                case 1:
+                    chi = 'dậu';
+                    break;
+                case 2:
+                    chi = 'tý';
+                    break;
+                case 3:
+                    chi = 'sửu';
+                    break;
+                case 4:
+                    chi = 'dần';
+                    break;
+                case 5:
+                    chi = 'mão';
+                    break;
+                case 6:
+                    chi = 'thìn';
+                    break;
+                case 7:
+                    chi = 'tỵ';
+                    break;
+                case 8:
+                    chi = 'ngọ';
+                    break;
+                case 9:
+                    chi = 'mùi';
+                    break;
+            }
+            document.getElementById('rs').innerHTML = 'Nam am lich: ' + can + ' ' + chi;
+        }
+    </script>
+</body>
+</html>

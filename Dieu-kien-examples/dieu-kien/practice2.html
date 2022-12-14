@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice2</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <h1>Tinh diem DH khoi D</h1>
+    <p>Mon Toan:</p>
+    <input type="text" name="" id="point1">
+    <p>Mon Van:</p>
+    <input type="text" name="" id="point2">
+    <p>Mon Anh Van:</p>
+    <input type="text" name="" id="point3">
+    <select name="" id="select">
+        <option value="a">KV1</option>
+        <option value="b">KV2</option>
+        <option value="c">KV2-NT</option>
+        <option value="d">KV3</option>
+    </select>
+    <button onclick="tinh()">Tinh Diem</button>
+    <h1 id="rs"></h1>
+    <script>
+        function tinh() {
+            let point1 = +document.getElementById('point1').value;
+            let point2 = +document.getElementById('point2').value;
+            let point3 = +document.getElementById('point3').value;
+            let select = document.getElementById('select').value;
+            let sumPoint = point1 + point2 + point3;
+
+            if (point1 != '' || point2 != '' || point3 != '') {
+                if (select == 'a') {
+                    document.getElementById('rs').innerHTML = 'Tổng điểm ĐH khối D của bạn là : ' + (sumPoint + 0.75);
+                } else if (select == 'b') {
+                    document.getElementById('rs').innerHTML = 'Tổng điểm ĐH khối D của bạn là : ' + (sumPoint + 0.25);
+                } else if (select == 'c') {
+                    document.getElementById('rs').innerHTML = 'Tổng điểm ĐH khối D của bạn là : ' + (sumPoint + 0.5);
+                } else if (select == 'd') {
+                    document.getElementById('rs').innerHTML = 'Tổng điểm ĐH khối D của bạn là : ' + (sumPoint);
+                }
+            } else {
+                alert('Vui long nhap du diem 3 mon')
+            }
+        }
+    </script>
+</body>
+</html>

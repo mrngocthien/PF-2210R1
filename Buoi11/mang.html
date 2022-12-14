@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    
+    <script>
+        // let nums1 = [2, 3, 4, 5, 6, 7, 8, 9],
+        //     nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        //     multi = 1;
+        // document.write('<table style="border:1px solid black;">');
+        // for (let i = 0; i < nums1.length; i++) {
+        //     document.write('<tr>'); 
+        //     for (let j = 0; j < nums2.length; j++) {
+        //         document.write('<td style="border:1px solid black;">')
+        //         document.write(nums1[i] + 'x' + nums2[j] + ' = ' + nums1[i] * nums2[j] + '<br>');
+        //         document.write('</td>')
+        //     }
+        //     document.write('</tr>'); 
+        // }
+        
+        // document.write('</table>');
+        
+        // mang 2 chieu thi khi duyet qua cac phan tu phai dung for 2 lan
+        // vong for dau duyet qua cac hang
+        // vong for thu 2 duyet qua cac cot
+        
+        // bai tap; dung 2 vong for de in ra cac phan tu mang
+        
+        let numbers = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        let max = numbers[0][0];
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = 0; j < numbers.length; j++) {
+                if (max < numbers[i][j]) {
+                    max = numbers[i][j]
+                    
+                }
+            }
+        }
+        document.write(max)
+
+
+        //tinh tong theo hang, theo cot, tong theo 2 duong cheo chinh cua mang
+    </script>
+</body>
+</html>

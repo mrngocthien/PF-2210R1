@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    
+    <script>
+    //nhap m, n la so hang, so cot
+    //nhap vao cac phan tu cua ma tran co m hang, n cot
+    //tim max cua tong hang
+
+    let m = prompt('nhap vao so hang cua ma tran : '),
+        n = prompt('nhap vao so cot cua ma tran : '),
+        arr =[];
+
+    // tao ma tran gom co m hang va n cot
+    for (let i = 0; i < m; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n; j++) {
+            let a = Math.floor(Math.random() * 100);
+            arr[i][j] = a;
+        }
+    }
+    console.log(arr);
+    //tim max tong hang
+    let sum = 0;
+    let max = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            sum += arr[i][j];
+        }
+        if (sum > max) {
+            max = sum;
+        }
+        document.write('Tong cua hang ' + (i + 1) + ' la : ' + sum + '<br>');
+    }
+    document.write('Max = '+ sum);
+    
+    </script>
+</body>
+</html>

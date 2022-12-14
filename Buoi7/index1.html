@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     
+</style>
+<body>
+    <input type="text" id="inp1">
+    <input type="button" value="Tinh So Ngay" onclick="tinhA()">
+    <h3 id="rsA"></h3>
+    <p>va</p>
+    <input type="text" id="inp2">
+    <input type="button" value="Tinh So Ngay" onclick="tinhB()">
+    <h3 id="rsB"></h3>
+    <script>
+        
+        
+        // if else function
+        function tinhA() {
+            let a = +document.getElementById('inp1').value;
+            if (a <= 12) {
+                if (a == 2) {
+                    document.getElementById('rsA').innerHTML = 'Thang ' + a + ' co 28 ngay';
+                } else if (a == 4 || a == 6 || a == 9 || a == 11) {
+                    document.getElementById('rsA').innerHTML = 'Thang ' + a + ' co 30 ngay';
+                } else {
+                    document.getElementById('rsA').innerHTML = 'Thang ' + a + ' co 31 ngay';
+                }
+            } else {
+                alert('1 nam chi co 12 thang');
+            }
+        }
+
+        //switch case function
+        function tinhB() {
+            let b = +document.getElementById('inp2').value;
+            switch(b) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12 :
+                    document.getElementById('rsB').innerHTML = 'Thang ' + b + ' co 31 ngay';
+                    break;
+                case 4: case 6: case 9: case 11:
+                    document.getElementById('rsB').innerHTML = 'Thang ' + b + ' co 30 ngay';
+                    break;
+                case 2 :
+                    document.getElementById('rsB').innerHTML = 'Thang ' + b + ' co 28 ngay';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

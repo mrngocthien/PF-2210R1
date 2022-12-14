@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    
+    <script>
+       //nhap vao a, tim vi tri cua a trong mang 
+       let arr = [
+        [13, 14, 15],
+        [25, 25, 27],
+        [12, 13, 14]
+       ];
+        let a = prompt('Nhap vao so bat ky: ');
+        let position = 0;
+       for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (a === arr[i][j]) {
+                    position = 1;
+                } else {
+                    position = 0;
+                }
+            }
+       }
+       document.write(arr[0][0])
+    //    if (position != 0) {
+    //         document.write('tim thay a trong mang');
+    //    } else {
+    //         document.write(a + ' khong nam trong mang')
+    //    }
+    </script>
+</body>
+</html>

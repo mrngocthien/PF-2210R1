@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <!-- vong lap For start -->
+    <!-- 
+        for (1;2;4) {
+            3
+        }
+        1. khoi tao bien dem.
+        2. dieu kien tiep tuc.
+        3. cau lenh can lap.
+        4. tang bien dem.
+     -->
+    <!-- vong lap For end -->
+    <!-- bai tap
+    1. in ra 100 tu hello
+    2. in ra cac so tu 1 den 100
+    3. in ra cac so chan tu 1 den 100
+    4. in ra cac so chia het cho 3 va 5
+    5. nhap a,b vao. in ra cac so le tu khoang a den b
+    6. tinh tong cac so tu a den b
+    7. tinh tich cac so chan tu a den b
+    8. dem so luong chia het cho 7 tu a den b
+    9. tinh tb cong cac so chia het cho 6
+    -->
+
+    <script>
+        // for (let i = 1; i < 100; i++) {
+        //     if (i % 2 == 0) {
+        //         document.write(i + '<br>');
+        //     }    
+        // }
+
+        // for (let i = 1; i < 100; i++) {
+        //     if (i % 5 == 0 && i % 3 == 0) {
+        //         document.write(i + '<br>');
+        //     }    
+        // }
+
+        // let a = +prompt('nhap a:');
+        // let b = +prompt('nhap b:');
+        // for (let i = a; i < b; i++) {
+        //     if (i % 2 != 0) {
+        //         document.write(i + '<br>');
+        //     } 
+        // }
+
+        // let a = +prompt('nhap a:');
+        // let b = +prompt('nhap b:');
+        // let sum = 0;
+        // for (let i = a; i <= b; i++) {
+        //     sum += i;
+        // }
+        // document.write(sum);
+
+        // let a = +prompt('nhap a:');
+        // let b = +prompt('nhap b:');
+        // let multi = 1;
+        
+        // for (let i = a; i <= b; i++) {
+        //     if (i % 2 == 0) {
+        //         multi *= i;
+        //     }
+        // }
+        // document.write(multi);
+
+        // let a = +prompt('nhap a:');
+        // let b = +prompt('nhap b:');
+        // let mod7 = 0;
+
+        // for (let i = a; i <= b; i++) {
+        //     if (i % 7 == 0) {
+        //         mod7++;
+        //     }
+        // }
+        // document.write(mod7);
+
+        let a = +prompt('nhap a:');
+        let b = +prompt('nhap b:');
+        let mod6 = 0;
+        let sum = 0;
+        let tbc = 0;
+
+        for (let i = a; i <= b; i++) {
+            if (i % 6 == 0) {
+                sum += i;
+                mod6++;
+            }
+        }
+        tbc = sum/mod6;
+        document.write(tbc);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <h2>GIÁ TRÁI CÂY</h2>
+    <select name="" id="select">
+        <option value="0">Chọn Trái Cây</option>
+        <option value="1">Ổi</option>
+        <option value="2">Dưa Hấu</option>
+        <option value="3">Táo</option>
+        <option value="4">Xoài</option>
+        <option value="5">Cam</option>
+        <option value="6">Chôm Chôm</option>
+        <option value="7">Măng Cụt</option>
+    </select>
+    <button onclick="xemGia()">Xem Giá</button>
+    <p>Giá Tiền (VNĐ) :</p>
+    <h3 id="rs"></h3>
+    
+    <script>
+        function xemGia() {
+
+            let n =document.getElementById('select').value.toLowerCase();
+            let g = '';
+
+            if (n == 1) {
+                g = '20000/kg';
+            } else if (n == 2) {
+                g = '20000/kg';
+            } else if (n == 3) {
+                g = '30000/kg'
+            } else if (n == 4) {
+                g = '30000/kg'
+            } else if (n == 5) {
+                g = '40000/kg'
+            }
+            else if (n == 6) {
+                g = '40000/kg'
+            }
+            else if (n == 7) {
+                g = '50000/kg'
+            }
+            else {
+                g = 'Khong tim thay qua nao !'
+            }
+
+            document.getElementById('rs').innerHTML = g;
+        }
+    </script>
+</body>
+</html>

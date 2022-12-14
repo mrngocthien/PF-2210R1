@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <!-- let arr = [3, 4, 5, 6];
+                    0  1  2  3
+    //mang la bien dac biet, ben trong no chua nhieu gia tri
+    //cac phan thu trong mang co the la so, chuoi, mang 
+    // vi tri bat dau tu 0
+     -->
+    <script>
+    
+        //khai bao
+        // let arr = [3, 4, 5, 6, 7, 8, 9];
+
+        //duyet phan tu cua mang
+        // for (let i = 0; i < arr.length; i++) {
+        //     document.write(arr[i] + '<br>')
+        // }
+
+        // in ra cac phan tu cua mang, moi phan tu trong 1 the h1
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     document.write('<h1>' + arr[i] + '</h1>') //cach 1
+        //     document.write(`<h1>${arr[i]}</h1>`) //cach 2
+        // }
+
+        //in ra cac phan tu trong mang, le trong the h1, chan trong h2
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] % 2 != 0) {
+        //         document.write('<h2>' + arr[i] + '</h2>')
+        //     } else {
+        //         document.write(`<h1>${arr[i]}</h1>`)
+        //     }
+        // }
+
+        // tinh tich cac phan tu trong mang
+
+        // let multi = 1;
+        // for (let i = 0; i < arr.length; i++) {
+        //     multi *= arr[i]
+        // }
+        // document.write(multi);
+
+        // tinh trung binh cong
+
+        // let multi = 1;
+        // let sum = 0;
+        // for (let i = 0; i < arr.length; i++) {
+        //     sum += arr[i]
+        // }
+        // document.write(sum/arr.length);
+
+        // tinh tbc cac phan tu chia het cho 3
+        // let sum = 0;
+        // let count = 0;
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] % 3 == 0) {
+        //         sum += arr[i];
+        //         count++;
+        //     }
+        // }
+        // document.write(sum/count);
+
+        //tim max cua cac phan tu trong mang
+        // let max = 0;
+        // let max2 = 0;
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] > max) {
+        //         max = arr[i];
+                
+        //     }
+        //     if (max2 = max) {
+        //         max2 = max;
+        //     } else if (max2 < arr[i] && max2 < max) {
+        //         max2 = arr[i];
+        //     }
+            
+        // }
+        // document.write(max + '<br>');
+        // document.write(max2);
+
+        // nhap vao a, tim vi tri cua a trong mang, co thi in ra vi tri, ko thi in ra -1
+
+        let arr = [3, 4, 5, 6, 7, 8, 9];
+
+        let a = prompt('nhap vao so bat ky :');
+        let index = -1;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (a == arr[i]) {
+                index = i;
+            }
+        }
+        document.write(index);
+
+        // sap xep cac phan tu trong mang
+    </script>
+</body>
+</html>

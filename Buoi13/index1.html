@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    
+    <script>
+    
+    
+       let arr = [
+        [13, 14, 15, 12],
+        [25, 25, 27, 100],
+        [12, 13, 14, 123],
+        [1, 2, 4, 12 ]
+       ];
+       let sum = 0;
+
+        //tinh tong tung hang
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = 0; j < arr[i].length; j++) {
+        //         sum += arr[i][j];
+        //     }
+        // }
+        // document.write(sum);
+        
+        //tinh tong duong cheo chinh
+        // for (let i = 0; i < arr.length; i++) {
+        //     sum += arr[i][i];
+        // }
+        // document.write('tong duong cheo chinh la: ' + sum);
+
+        //tinh tong duong cheo phu
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i][arr.length - i -1];
+        }
+        document.write('tong duong cheo phu la: ' + sum);
+    </script>
+</body>
+</html>

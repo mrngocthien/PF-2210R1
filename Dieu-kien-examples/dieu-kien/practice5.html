@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice5</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <input type="text" name="" id="dauVao">
+    <select name="" id="select1">
+        <option value="a">VND</option>
+        <option value="b">USD</option>
+    </select>
+    <select name="" id="select2">
+        <option value="b">USD</option>
+        <option value="a">VND</option>
+    </select>
+    <button onclick="tinh()">Convert</button>
+    <p id="rs"></p>
+    <script>
+        function tinh() {
+            let giaTriVao = document.getElementById('dauVao').value;
+            let select1 = document.getElementById('select1').value;
+            let select2 = document.getElementById('select2').value;
+            if (select1 == select2) {
+                document.getElementById('rs').innerHTML = 'KQ : ' + giaTriVao;
+            }
+            if (select1 == 'a' && select2 == 'b') {
+                document.getElementById('rs').innerHTML = 'KQ : ' + (giaTriVao/24000) + 'USD';
+            }
+            if (select1 == 'b' && select2 == 'a') {
+                document.getElementById('rs').innerHTML = 'KQ : ' + (giaTriVao*24000) + 'VND';
+            }
+        }
+    </script>
+</body>
+</html>

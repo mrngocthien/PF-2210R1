@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice4</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <p>Nhập vào chiều cao :</p><input type="text" id="inp1">
+    <p>Nhập vào cân nặng:</p><input type="text" id="inp2"><br><br>
+    <button onclick="tinh()">Tính BMI</button>
+    <h3 id="rs"></h3>
+    
+    <script>
+        function tinh() {
+            let a = +document.getElementById('inp1').value;
+            let b = +document.getElementById('inp2').value;
+            let bmi = b / (a**2);
+
+            if (bmi > 40) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn béo phì cấp độ III';
+            } else if (bmi >= 35) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn béo phì cấp độ II';
+            } else  if (bmi >=30) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn béo phì cấp độ II';
+            } else if (bmi > 25) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn đang thừa cân';
+            }
+            else if (bmi >= 18.5) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn thật cân đối';
+            } else if (bmi > 17) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn gầy cấp độ I';
+            } else if (bmi > 16) {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn gầy cấp độ II';
+            } else {
+                document.getElementById('rs').innerHTML = 'Chỉ số BMI của bạn là : ' + bmi + ' Bạn gầy cấp độ III';
+            }
+        }
+    </script>
+</body>
+</html>

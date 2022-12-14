@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     
+</style>
+<body>
+    <input type="text" id="inp">
+    <input type="button" value="Tinh" onclick="tinh()">
+    <h3 id="rs"></h3>
+    <script>
+        //switch case function
+        function tinh() {
+            let year = +document.getElementById('inp').value;
+            let can = '';
+            let chi = '';
+            switch(year % 10) {
+                case 0:
+                    can = 'canh';
+                    break;
+            }
+            switch(year % 12) {
+                case 0:
+                    chi = 'than';
+                    break;
+            }
+            document.getElementById('rs').innerHTML = 'Nam am lich: ' + can + ' ' + chi;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Toan tu : so hoc - logic - so sanh
+        // 1. gan : =, += -=
+        // 2. so hoc : +, -, *, /, %, ...
+            alert(5 + '10') //= '510'
+            alert(5 + '2' + 1) //= '52' + 1 = '521'
+            alert(5 + 2  + '1') //= '71'
+            //thu tu thuc hien phep: uu tien (), nhan chia, trai phai, theo tung cap
+            //cong voi chuoi -> chuoi
+            //cac phep con lai voi chuoi -> so
+            alert(5 * '2' + 1) //= 10 + 1 = 11
+            alert('a'/10-1) //= loi (NaN: not a number)
+            alert(5 + '2' + '1' + 1) //= 10 + '1' + 1 = '101' + 1 = '1011'
+        
+        // 3. so sanh: >, <, >=, <=, ==, !=, ===, !==
+        let x = 5 == 5; //true
+        let y = 7 != 5; //true
+        let z = 5 == '5'; //true
+        let t = 5 === '5'; //false
+
+        // logic : !, &&, ||, &, |
+        let x1 = !5 == 5; //false
+        let y1 = 5 == 5 && 7 > 8 //false
+        let z1 = 5 == 5 || 7 > 8 //true
+        let t1 = 5 !=5 || 7 > 8 //false
+    </script>
+</body>
+</html>
