@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice7</title>
+</head>
+<body>
+    
+    <script>
+        let n = +prompt('Nhap so luong so nguyen to can hien thi:');
+        let dem = 0;
+
+        for (let x = 2; dem <= n; x++) {
+            // kiem tra x co phai la so nguyen to
+            let kq = true;
+            for (let i = 2; i < x; i++) {
+                if (x % i == 0) {
+                    kq = false;
+                }
+            }
+            //in ra so nguyen to va dem so luong so nguyen to cho vao bien dem
+            if (kq) {
+                dem++;
+                document.write(x + '<br>')
+            }
+        }     
+    </script>
+</body>
+</html>

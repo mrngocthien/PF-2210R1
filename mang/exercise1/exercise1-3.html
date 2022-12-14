@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise1-3</title>
+</head>
+<body>
+    <script>
+        let str = prompt('nhap vao cau bat ky :'), //tao mang chua chuoi nguoi dung nhap vao
+            UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', //tao mang bang chu cai viet hoa de lam chuan
+            LOWER = 'abcdefghijklmnopqrstuvwxyz', //tao mang bang chu cai viet thuong de lam chuan
+            result = []; //tao mang trong de chua cac gia tri dao nguoc sau khi so sanh
+        
+        /* b1. kiem tra xem phan tu thu x cua mang str co xuat hien trong mang UPPER, 
+        neu co thi chuyen phan tu thu x nay thanh dang viet thuong.
+        b2. kiem tra xem phan tu thu x cua mang str co xuat hien trong mang LOWER,
+        neu co thi chuyen no thanh dang viet hoa
+        - lap lai cho den khi duyet het cac phan tu cua mang str */
+
+        for(var x=0; x<str.length; x++) {
+            if (UPPER.indexOf(str[x]) !== -1) { 
+                result.push(str[x].toLowerCase());
+            } else if (LOWER.indexOf(str[x]) !== -1) {
+                result.push(str[x].toUpperCase());
+            } else {
+                result.push(str[x]);
+            }
+        }
+        document.write(result.join(''));
+    </script>
+</body>
+</html>

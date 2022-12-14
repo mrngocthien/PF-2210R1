@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+<style>
+    .container {
+        padding-top: 30px;
+        width: 20%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>practice-1:</h1>
+    <div class="container">
+        <input type="text" id="txtValue"/>
+        <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+        <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+        <div id="result"></div>
+    </div>
+    
+
+    <script>
+        let x = 0,
+            array = [];
+
+        function add_element_to_array() {
+            array[x] = document.getElementById("txtValue").value;
+            alert("Element: " + array[x] + " Added at index " + x);
+            x++;
+            document.getElementById("txtValue").value = "";
+        }
+
+        function display_array() {
+            let e = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = e;
+        }
+    </script>
+</body>
+</html>

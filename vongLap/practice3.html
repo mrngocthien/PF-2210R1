@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice3</title>
+</head>
+<body>
+    <!-- <p>Nhap vao so nguyen duong > 11 :</p><br>
+    <input type="text" id="inp">
+    <input type="button" value="Ok" onclick="check()">
+    <input type="button" value="Cancel" onclick="resetAll()">
+    <p id="result">so dao nguoc cua so tren la :</p> -->
+    <script>
+        
+        function resetAll() {
+            let inp = +document.getElementById('inp').value;
+            document.getElementById('inp').value = '';
+        }
+
+        function check() {
+            let inp = document.getElementById('inp').value;
+            let n = inp, 
+                remaining = 0,
+                reverse = 0;
+            
+            if (inp <= 11 ) {
+                alert('De dam bao truc quan, vui long nhap so nguyen duong > 11');
+            } else {
+                //break point khi n == 0 
+                while (n > 0) {
+                    remaining = n % 10; // lay phan du trong gia tri cua bien n
+                    reverse = reverse * 10 + remaining; //cap nhat gia tri cua bien reverse
+                    n = Math.floor(n/10); // cap nhat gia tri cua bien n bang phuong thuc lam tron xuong
+                }
+                document.getElementById('result').innerHTML = 'so dao nguoc cua so tren la :' + '<br>' + + reverse;
+            }
+        }
+
+        // let num = prompt('nhap vao so bat ky');
+        // for (let i = num.length - 1; i >= 0 ; i--) {
+        //     document.write(num[i]);
+        // }
+
+        // let so = prompt('nhap vao so bat ky');
+        // for (; so > 0; ) {
+        //     let donVi = so % 10;
+        //     so = (so - donVi) / 10;
+        //     document.write(donVi);
+        // }
+
+
+    </script>
+
+</body>
+    
+</html>

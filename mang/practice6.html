@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice6</title>
+</head>
+<style>
+    body {
+        background: #fff;
+    }
+    .container {
+        width: 50%;
+        height: 60vh;
+        margin: auto;
+        color: #fff;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+    }
+    p {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Caro game simple</h2>
+        <p id="caroGame"></p>
+        <input type="button" value="Change Value" onclick="changeValue()">
+    </div>
+    
+    <script>
+        let b = document.getElementById("caroGame"),
+            board = [],
+            data = "";
+
+        // tao mang 1 chieu
+        for (let i = 0; i < 10; i++) {
+            board[i] = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0); //tao mang voi 10 gia tri 0
+        }
+        
+        // cap nhat mang thanh 2 chieu
+        for (let i = 0; i < 10; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"; // tao khoang cach deu nhau giua cac gia tri ( tuong tu margin)
+            }
+        }
+        b.innerHTML = data;
+
+        function changeValue() {
+            let positionX = prompt("X: "),
+                positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "x"; //thay the gia tri o vi tri x,y bang gia tri x
+            for (let i = 0; i < 10; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 10; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"; // tao khoang cach deu nhau giua cac gia tri ( tuong tu margin)
+                }
+            }
+            b.innerHTML = "<hr/>" + data;
+        }
+    </script>
+</body>
+</html>

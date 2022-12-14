@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example2</title>
+</head>
+<body>
+    <p>Nhập số tuỳ ý :</p>
+    <input id="input" type="text" placeholder="Nhập số vào đây !">
+    <input id="check" type="button" value="Kiểm tra" onclick="check()">
+    <script>
+        function check() {
+            let inputValue = document.getElementById('input');
+            let number = inputValue.value;
+            let mod = number % 2;
+            if (mod == 0) {
+                alert(number + ' là số chẵn !');
+            } else {
+                alert(number + ' là số lẽ !');
+            }
+        }
+    </script>
+</body>
+</html>

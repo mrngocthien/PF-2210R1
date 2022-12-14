@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice4</title>
+</head>
+<style>
+</style>
+<body>
+    <script>
+        var arr = [];
+        for (var i = 0; i < 100; ++i) {
+            arr[i] = Math.floor(Math.random() * 101);
+        }
+        var minValue = findMin(arr);
+        var maxValue = findMax(arr);
+        dispArr(arr);
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write("The minimum value is: " + minValue);
+        document.write("<br/>");
+        document.write("The maximum value is: " + maxValue);
+
+        function dispArr(arr) {
+            for (var i = 0; i < arr.length; ++i) {
+                arr[i] += " ";
+                if (i % 10 == 9) {
+                    arr[i] += "<br>";
+                }
+            }
+            if (i % 10 != 0) {
+                arr[i] += "<br>";
+            }
+            document.write(arr);
+        }
+        function findMin(arr) {
+            var min = arr[0];
+            for (var i = 1; i < arr.length; ++i) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+        function findMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i < arr.length; ++i) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+    </script>
+</body>
+</html>

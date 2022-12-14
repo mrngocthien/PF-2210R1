@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+<style>
+    button {
+        display: block;
+        width: 20%;
+        height: 30px;
+        margin: 50px auto;
+        text-align: center;
+        background: greenyellow;
+        color: #000;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.5s ease-in-out;
+    }
+    button:hover {
+        color: #fff;
+        background: orange;
+        transform: translate(-10px, 10px);
+    }
+</style>
+<body>
+    <button onclick="play()">PLAY</button>
+    <script>
+        function play() {
+            let inp = '';
+            let num = 0;
+            let guessNum = 0;
+            let count = 1;
+
+            while (inp == '') {
+                inp = +prompt('Nhập vào số bất kỳ :');
+                num = Math.floor(Math.random() * inp);  
+            }
+
+            guessNum = +prompt('Bạn hãy đoán một số trong khoảng từ 1 đến ' + inp);
+
+            while (count < 3 && num != guessNum) {
+                guessNum = +prompt('Chưa đúng, hãy thử đoán lại, lưu ý chỉ còn ' + (3 - count) + ' lượt chơi !');
+                count++;
+            }
+            while (count >= 3 && num != guessNum) {
+                alert('Game Over');
+                alert('Bạn đoán sai và hết lượt chơi');
+                break
+            }
+            if (num == guessNum) {
+                alert('Xin chúc mừng, bạn đã đoán đúng số ' + num);
+            }
+            
+            
+            
+
+            
+        }
+    </script>
+</body>
+</html>
