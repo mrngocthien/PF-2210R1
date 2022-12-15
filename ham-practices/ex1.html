@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        let inp = +prompt('nhap vao so bat ky :');
+        function footToMeter(foot) {
+            let meter = 1;
+            meter = 0.305 * foot;
+            return meter 
+        }
+        function meterToFoot(meter) {
+            let foot = 1;
+            foot = 3.279 * meter;
+            return foot
+        }
+        if (inp <= 1) {
+            document.write(inp + ' foot = ' + footToMeter(inp) + ' meter'+ '<br>');
+            document.write(inp + ' meter = ' + meterToFoot(inp) + ' foot');
+        } else {
+            document.write(inp + ' foots = ' + footToMeter(inp) + ' meter'+ '<br>');
+            document.write(inp + ' meters = ' + meterToFoot(inp) + ' foot');
+        }
+        
+    </script>
 </body>
 </html>
