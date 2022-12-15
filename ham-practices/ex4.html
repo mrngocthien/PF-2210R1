@@ -11,14 +11,14 @@
         let xxx = prompt('nhap vao chuoi :');
         function deQuy(str) {
             if (str[0] != str[str.length - 1]) {
-                return 'chuoi khong doi xung';
+                    return false;
             }
             if (str.length <= 1) {
-                return 'chuoi doi xung'
+                return true;
             }
             return deQuy(str.substring(1, str.length - 1))
         }
-        alert(deQuy(xxx))
+        alert(deQuy(xxx));
     </script>
 </body>
 </html>
