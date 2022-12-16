@@ -28,14 +28,16 @@
         3: doan code xu ly de co 4
         4: gia tri tra ve tu ham
         */
-        function check(a) {
-            if (isNaN(a)) {
-                return true
-            } else {
+        function check(x) {
+            if (isNaN(x)) {
                 return false
+            } else {
+                return true
             }
         }
-        alert(check(prompt('nhap vao mot ky tu bat ky : ')));        
+
+        let inp = +prompt('nhap vao so bat ky: ');
+        alert(check(inp));    
     </script>
 </body>
 </html>

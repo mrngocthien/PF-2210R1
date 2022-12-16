@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <canvas id="myCanvas" width="800" height="600" style="border: 3px solid #000000"></canvas>
+    <script>
+
+        //set thong so co ban cho hinh tron
+        function Circle(x, y, radius){
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        
+        //random color cho hinh tron
+        function getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        function getRandomColor(){
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        //ve 1 hinh tron
+        function createCircle(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var radius = Math.floor(Math.random() * 100);
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            var circle = new Circle(x, y, radius + 50);
+            var color = getRandomColor();
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        //ve n hinh tron
+        function createMultipleCircle(n){
+            for(var i = 0; i < n; i++){
+                createCircle();
+            }
+        }
+
+        let gameTopPosition = 0,
+            gameBottomPosition = 600,
+            yDistance = 1,
+            timeLoop = 10;
+
+        function moveCircle() {
+            ctx.clearRect(circle.x, circle.y);
+            
+            // let isTouchTop = circle.x < gameTopPosition; //cham tran
+            // let isTouchBottom = circle.y > gameBottomPosition; //cham san
+            // if (isTouchTop || isTouchBottom) {
+            //     yDistance = -yDistance;//quay he Hai oi !
+            // }
+
+            carYPosition += yDistance;
+            createMultipleCircle(10);
+        }
+
+        setInterval(moveCircle, timeLoop);
+    </script>
+</body>
+</html>

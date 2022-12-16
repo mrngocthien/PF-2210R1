@@ -29,21 +29,21 @@
         4: gia tri tra ve tu ham
         */
 
-        function check(arr, a) {
+        function check(arr, element){
             let count = 0;
-            for (let i = 0; i <= arr.length; i++) {
-                if (a == arr[i]) {
-                    count += 1;
+            for (let i = 0; i < arr.length; i++) {
+                if (element == arr[i]) {
+                    count++;
                 }
             }
-            if (count != 0) {
-                return count
-            } else {
-                return -1
-            }
+            alert('phan tu ' + element + ' xuat hien ' + count + ' lan');
+        }
 
-        } 
-        alert(check([1, 2, 3, 4, 3, 3], 3));
+        let arr = [1, 2, 3, 4, 3, 3],
+            x = +prompt('Nhap vao so bat ky');
+
+        check(arr, x);
+
     </script>
 </body>
 </html>
