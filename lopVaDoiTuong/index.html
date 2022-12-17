@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <script>
+        let person = {
+            name: {first: 'Bob', last: 'Smith'},
+            age: 32,
+            gender: 'male',
+            interests: ['music', 'skiing'],
+            bio: function() {
+                alert(this.name.first + ' ' + this.name.last 
+                + ' is ' + this.age + ' years old. He likes ' 
+                + this.interests[0] + ' and ' + this.interests[1] + '.\n' 
+                + 'My eyes color is ' + this.eyes + '.');
+            },
+            greeting: function() {
+                alert('Hi! I\'m ' + this.name.first + '.');
+            }
+        };
+        person.age = 45; person['name']['last'] = 'Cratchit';
+        person['eyes'] = 'hazel'; 
+        person.farewell = function() { alert("Bye everybody!"); }
+
+        let myDataName = 'height'; 
+        let myDataValue = '1.75m'; 
+        person[myDataName] = myDataValue;
+
+        person.greeting();
+        person.bio();
+        person.farewell();
+
+        alert(person.height);
+        
+    </script>
+</body>
+</html>
