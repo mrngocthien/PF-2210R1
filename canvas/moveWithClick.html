@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        transition: 0.5s;
+    }
+</style>
+<body>
+    <img src="./img.jpeg" id="img" alt="" style="width: 20%;
+                                                position: absolute;
+                                                top: 100px;
+                                                left: 500px">
+    <button onclick="sangPhai()">Sang phai</button>
+    <button onclick="sangTrai()">Sang trai</button>
+    <button onclick="lenTren()">len tren</button>
+    <button onclick="xuongDuoi()">xuong duoi</button>
+    
+    <script>
+        let anh = document.getElementById('img');
+        function sangPhai() {
+            let left = parseInt(anh.style.left);
+            document.getElementById('img').style.left = left + 50 + 'px';
+        }
+        function sangTrai() {
+            let left = parseInt(anh.style.left);
+            document.getElementById('img').style.left = left + -50 + 'px';
+        }
+        function lenTren() {
+            let top = parseInt(anh.style.top);
+            document.getElementById('img').style.top = top + -50 + 'px';
+        }
+        function xuongDuoi() {
+            let top = parseInt(anh.style.top);
+            document.getElementById('img').style.top = top + 50 + 'px';
+        }
+    </script>
+</body>
+</html>

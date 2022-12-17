@@ -7,22 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="game" width="800" height="600" style="border: 3px solid #000000"></canvas>
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000000;"></canvas>
     <script>
         let gameContext = document.getElementById("game").getContext("2d");
-        let carXPosition = 20,
-            carYPosition = 20,
+        let carXPosition = Math.floor(Math.random() * 200),
+            carYPosition = Math.floor(Math.random() * 100),
             carWidth = 150,
             carHeight = 100;
 
         function drawCar() {
-            gameContext.beginPath();
-            gameContext.fillStyle='#fa4b2a';
-            gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
+                gameContext.beginPath();
+                gameContext.fillStyle='#fa4b2a';
+                gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
         }
 
+        function drawMultiCar() {
+            for (let i = 0; i < 10; i++) {
+                drawCar();
+            }
+        }
+    
         let gameTopPosition = 0, //coi tran (+7%)
             gameBottomPosition = 600, //lau san (-7%)
+            gameRightPosition = 800,
             yDistance = 1,
             timeLoop = 10;
 
@@ -32,11 +39,10 @@
             let isTouchTop = carYPosition < gameTopPosition; //cham tran
             let isTouchBottom = carYPosition + carHeight > gameBottomPosition; //cham san
             if (isTouchTop || isTouchBottom) {
-                yDistance = -yDistance;//quay he Hai oi !
+                yDistance = -yDistance;//quay xe Hai oi !
             }
-
             carYPosition += yDistance;
-            drawCar();
+            drawMultiCar();
         }
 
         setInterval(moveCar, timeLoop);
