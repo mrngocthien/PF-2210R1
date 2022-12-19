@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="game"></div>
+    <script>
+        function Hero(image, top, left, size, speed){
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speed = speed;
+
+            this.getHeroElement = function(){
+                return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute; border-radius: 50%" />';
+            }
+
+            this.moveRight = function(){
+                this.left += this.speed;
+                console.log('moveRight: ' + this.left);
+            }
+
+            this.moveLeft = function(){
+                this.left -= this.speed;
+                console.log('moveLeft: ' + this.left);
+            }
+
+            this.moveDown = function(){
+                this.top += this.speed;
+                this.left -= this.speed;
+                console.log('moveDown: ' + this.top);
+            }
+            this.moveUp = function(){
+                this.top -= this.speed;
+                this.left -= this.speed;
+                console.log('moveUp: ' + this.top);
+            }
+        }
+
+        var hero = new Hero('img.jpeg', 0, 0, 150, 50);
+
+        function start(){
+            if(hero.left < window.innerWidth - hero.size && hero.top <  window.innerHeight - hero.size){
+                hero.moveRight();
+            }
+            
+            if(hero.left > 0 && hero.top > window.innerHeight - (hero.size)){
+                hero.moveLeft();
+            }
+
+            if(hero.left > window.innerWidth - hero.size){
+                hero.moveDown();
+            }
+
+            if(hero.left < hero.size/2 && hero.top > 0){
+                hero.moveUp();
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 50)
+        }
+
+        start();
+    </script>
+</body>
+</html>
