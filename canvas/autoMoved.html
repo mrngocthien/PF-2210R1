@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-
-</style>
-<body>
-    <img src="./img.jpeg" id="img" alt="" style="width: 300px;
-                                                height: 300px;
-                                                position: absolute;
-                                                top: 100px;
-                                                left: 500px; border-radius: 50%;">
-    
+  </head>
+  <style></style>
+  <body>
+    <img
+      src="./img.jpeg"
+      id="img"
+      alt=""
+      style="
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+      "
+    />
     <script>
-        let anh = document.getElementById('img');
-        let speedX = 5,
-            speedY = 5;
+      let anh = document.getElementById("img");
+      let speedX = 5,
+        speedY = 0,
+        s = 0;
 
-        setInterval(() => {
-            anh.style.left = parseInt(anh.style.left) + speedX + 'px';
-            anh.style.top = parseInt(anh.style.top) + speedY + 'px';
-            if (parseInt(anh.style.left) >= window.innerWidth - parseInt(anh.style.width)) {
-                speedX = -speedX;
-            }
-            if (parseInt(anh.style.top) >= window.innerHeight - parseInt(anh.style.height)) {
-                speedY = -speedY;
-            }
-            if (parseInt(anh.style.left) <= 0) {
-                speedX = -speedX;
-            }
-            if (parseInt(anh.style.top) <= 0) {
-                speedY = -speedY;
-            }
-        }, 10);
+      setInterval(() => {
+        anh.style.left = parseInt(anh.style.left) + speedX + "px";
+        anh.style.top = parseInt(anh.style.top) + speedY + "px";
+        s += 5;
+        //move to right
+        if (s >= window.innerWidth - parseInt(anh.style.width)) {
+          speedX = 0;
+          speedY = 5;
+        }
 
-        // lam anh tu di chuyen lan luot thanh hinh chu nhat quanh 4 canh man hinh
-        // lam anh tu di chuyen va co the thay doi huong
+        //move to left
+        if (
+          s >=
+          window.innerWidth +
+            window.innerHeight -
+            parseInt(anh.style.width) -
+            parseInt(anh.style.height)
+        ) {
+          speedX = -5;
+          speedY = 0;
+        }
+
+        //move Down
+        if (
+          s >=
+          2 * (window.innerWidth - parseInt(anh.style.width)) +
+            window.innerHeight -
+            parseInt(anh.style.height)
+        ) {
+          speedX = 0;
+          speedY = -5;
+        }
+        //move up
+        if (
+          s >=
+          2 *
+            (window.innerWidth +
+              window.innerHeight -
+              parseInt(anh.style.height) -
+              parseInt(anh.style.width))
+        ) {
+          speedX = 5;
+          speedY = 0;
+          s = 0;
+        }
+      }, 10);
+
+      // lam anh tu di chuyen lan luot thanh hinh chu nhat quanh 4 canh man hinh
+      // lam anh tu di chuyen va co the thay doi huong
     </script>
-</body>
+  </body>
 </html>

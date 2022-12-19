@@ -14,23 +14,33 @@
 <body>
     <img src="./img.jpeg" id="img" alt="" style="width: 20%;
                                                 position: absolute;
-                                                top: 100px;
-                                                left: 500px">
+                                                top: 0;
+                                                left: 0">
     
     <script>
         let anh = document.getElementById('img');
+        let speedX = 5;
+        let speedY = 0;
+        setInterval(() => {
+            anh.style.left = parseInt(anh.style.left) + speedX + "px";
+            anh.style.top = parseInt(anh.style.top) + speedY + "px";
+        }, 25)
         window.addEventListener('keydown', (k) => {
             if (k.key == 'd') {
-                anh.style.left = parseInt(anh.style.left) + 50 + 'px';
+                speedX = 5;
+                speedY = 0;
             }
             if (k.key == 'a') {
-                anh.style.left = parseInt(anh.style.left) + -50 + 'px';
+                speedX = -5;
+                speedY = 0;
             }
             if (k.key == 'w') {
-                anh.style.top = parseInt(anh.style.top) + -50 + 'px';
+                speedX = 0;
+                speedY = -5;
             }
             if (k.key == 's') {
-                anh.style.top = parseInt(anh.style.top) + 50 + 'px';
+                speedX = 0;
+                speedY = 5;
             }
         })
     </script>

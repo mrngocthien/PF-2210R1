@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product {
+            constructor(name, price, amount) {
+                this.name = name;
+                this.price = price;
+                this.amount = amount;
+            }
+            getInfo() {
+                alert('SP ' + this.name + ' gia ban ' + this.price + ' ton kho ' + this.amount);
+            }
+        }
+
+        let product1 = new Product('Ip12', 1200, 1);
+        let product2 = new Product('S20', 1100, 2);
+        (new Product('RogPhone', 1500, 3)).getInfo();// viet tat
+        product1.getInfo();
+        product2.getInfo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+</style>
+<body>
+    <!-- 2 cach viet code : 
+        1. OOP object oriented Programing : viet doi tuong de giai quyet bai toan (java, js, c#, ...)
+        2. Structural / Funtional programing : viet ham de giai quyet cac bai toan
+    -->
+    <!-- 
+        tai sao dung OOP ?
+        - de bao tri, de phat trien
+        - doi tuong la gi ? la 1 bien co cac thuoc tinh va cac phuong thuc
+        - lop : tap hop cac doi tuong co cung phuong thuc.
+        => lop la cai khung, doi tuong la san pham lam tu khung
+     -->
+     <!-- 
+        cac doi tuong thong dung trong JS : Math, Date, String, Array,...
+      -->
+    <script>
+        // let ob = {
+        //     tenThuocTinh: 'gia tri thuoc tinh',
+        //     tenPhuongThuc: function() {
+
+        //     }
+
+        // }
+
+        // let person  = {
+        //     name: "A",
+        //     gender: "name",
+        //     say: function() {
+        //         alert(this.name + ' hi')
+        //     }
+        // }
+
+        // person.say();
+
+        // let diemTB = {
+        //     ten: 'a',
+        //     toan: 5,
+        //     ly: 4,
+        //     hoa: 6,
+        //     getTB: function() {
+        //         alert('Diem TB cua ' + this.ten + ' : ' + (this.toan + this.ly + this.hoa)/3)
+        //     }
+        // }
+
+        // diemTB.getTB();
+
+        class Circle {
+            constructor(radius, color) {
+                this.radius = radius;
+                this.color = color;
+            }
+            getInfo() {
+                alert('hinh tron co ban kinh ' + this.radius + 
+                ' va mau la ' + this.color)
+            }
+        }
+
+        let c1 = new Circle(20, 'red');
+        let c2 = new Circle(30, 'black');
+
+        c1.getInfo();
+        c2.getInfo();
+    </script>
+</body>
+</html>
