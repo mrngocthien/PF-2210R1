@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000000;"></canvas>
+    <script>
+        let gameContext = document.getElementById("game").getContext("2d");
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+            getPerimeter() {
+                return alert('Chu vi hinh chu nhat : ' + (width + height) * 2);
+            }
+            getArea(area) {
+                return alert('Dien tich hinh chu nhat : ' + width * height);
+            }
+            setParameter(width, height) {
+                return this.width = width,
+                        this.height = height;
+
+            }
+        };
+        
+        function display() {
+            gameContext.beginPath();
+            gameContext.fillStyle='#fa4b2a';
+            gameContext.fillRect(20, 20, width, height);
+        }
+        
+
+        let rectangle = new Rectangle(400, 200);
+        let width = rectangle.width;
+        let height = rectangle.height;
+        
+        display();
+        rectangle.getPerimeter();
+        rectangle.getArea();
+
+        rectangle.setParameter(600, 300);
+        width = rectangle.width;
+        height = rectangle.height;
+        console.log(width);
+        console.log(height);
+
+        setTimeout(() => {
+            rectangle.getPerimeter();
+            rectangle.getArea();
+            display();
+        }, 3000);
+    </script>
+</body>
+</html>
