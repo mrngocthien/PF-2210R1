@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor (temp) {
+                this.temp = temp;
+            }
+            getKenvin() {
+                return (temp + 273.15);
+            }
+            getFahrenheit() {
+                return (9/5 * temp + 32);
+            }
+        }
+        let n = +prompt('Nhap vao nhiet do hien tai : ')
+        let temperature = new Temperature(n);
+        let temp = temperature.temp;
+
+        alert('Nhiet do hien tai la : ' + temp);
+        alert(temp + ' do C = ' + temperature.getFahrenheit() + ' do Fahrenheit');
+        alert(temp + ' do C = ' + temperature.getKenvin() + ' do Kenvin');
+    </script>
+</body>
+</html>
