@@ -11,6 +11,7 @@
     canvas.width = width;
     canvas.height = height;
 
+    //draw the linear gradient background
     const drawBackground = () => {
         const background = context.createLinearGradient(0, 0, 0, height);
         background.addColorStop(0, '#000B27');
@@ -20,6 +21,7 @@
         context.fillRect(0, 0, width, height);
     };
 
+    //draw the land
     const drawForeground = () => {
         context.fillStyle = '#0C1D2D';
         context.fillRect(0, height * .95, width, height);
@@ -28,6 +30,7 @@
         context.fillRect(0, height * .955, width, height);
     };
 
+    //draw the wizard
     const drawWizard = () => {
         const image = new Image();
         image.src = './assets/wizard.png';
@@ -42,6 +45,7 @@
         };
     };
 
+    //draw stars
     const drawStars = () => {
         let starCount = numberOfStars;
 
@@ -53,11 +57,22 @@
             const size = random(1, 5);
 
             context.fillRect(x, y, size, size);
+
         }
     };
+
+    // const shootedStars = () => {
+    //     canvas.addEventListener('mousedown', (e) => {
+    //         if (e == 'mousedown') {
+    //             context.clearRect(x,y,size,size)
+    //         };
+    //     });
+    //     drawStars();
+    // } 
 
     drawBackground();
     drawForeground();
     drawWizard();
     drawStars();
+    // shootedStars();
 })();

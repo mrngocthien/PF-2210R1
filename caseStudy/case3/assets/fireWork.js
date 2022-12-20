@@ -47,11 +47,12 @@
         context.save();
         context.translate(positions.wandX, positions.wandY);
         
-        if (rotationInDegrees > 0 && rotationInDegrees < 90) {
+        if (rotationInDegrees > 0 && rotationInDegrees < 360) {
             context.rotate(rotationInDegrees * Math.PI / 180);
-        } else if (rotationInDegrees > 90 && rotationInDegrees < 275) {
-            context.rotate(90 * Math.PI / 180);
-        }
+        } 
+        // else if (rotationInDegrees > 90 && rotationInDegrees < 275) {
+        //     context.rotate(90 * Math.PI / 180);
+        // }
 
         context.drawImage(image, -image.width, -image.height / 2);
 
@@ -173,8 +174,9 @@
             this.friction = 0.95;
             this.gravity = 2;
 
-            this.hue = random(0, 360);
-            this.alpha = 1;
+            // this.hue = random(0, 360);
+            this.hue = '';
+            this.alpha = 0.8;
             this.decay = random(.015, .03);
 
             while(particleLength--) {
