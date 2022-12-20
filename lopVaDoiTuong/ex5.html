@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ElectricLamp {
+            constructor(status) {
+                this.status = false;
+            }
+        
+            turnOn() {
+                if (this.status) {
+                    alert("đèn vẫn đang sáng ");
+                } else {
+                    document.write("đèn đã được bật! <br>");
+                    this.status =true;
+                }
+            };
+
+            turnOff() {
+                if (this.status) {
+                    document.write("đèn đã được tắt! <hr>");
+                    this.status =false
+                } else {
+                    alert("đèn vẫn đang sáng ");
+
+                }
+            };
+        };
+
+        class switcheButton {
+            constructor(lamp, conectStatus) {
+                this.lamp = {};
+                this.conectStatus = false;
+            }
+            conectToLamp(obj) {
+                this.lamp = obj;
+                this.status = true;
+            };
+            getStatus() {
+                if (this.status) {
+                    console.log(this.lamp.name);
+                    console.log(this.lamp.status);
+                }
+            };
+            turnOff() {
+                if (this.status) {
+                    this.lamp.turnOff();
+                    this.getStatus();
+                }
+            };
+            turnOn() {
+                if (this.status) {
+                    this.lamp.turnOn();
+                    this.getStatus();
+                }
+            }
+        };
+
+
+    let switcher = new switcheButton();
+    let lamp = new ElectricLamp();
+
+    switcher.conectToLamp(lamp);
+    
+    for (let i = 0; i < 10; i++) {
+        switcher.turnOn();
+        switcher.turnOff();
+    }
+    </script>
+</body>
+</html>
