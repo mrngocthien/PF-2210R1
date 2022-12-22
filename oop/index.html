@@ -11,6 +11,7 @@
      
 </style>
 <body>
+
     <!-- 2 cach viet code : 
         1. OOP object oriented Programing : viet doi tuong de giai quyet bai toan (java, js, c#, ...)
         2. Structural / Funtional programing : viet ham de giai quyet cac bai toan
@@ -25,6 +26,9 @@
      <!-- 
         cac doi tuong thong dung trong JS : Math, Date, String, Array,...
       -->
+
+    <canvas id="myCanvas" width="800" height="600" style="border: 3px solid #000000"></canvas>
+
     <script>
         // let ob = {
         //     tenThuocTinh: 'gia tri thuoc tinh',
@@ -56,8 +60,12 @@
 
         // diemTB.getTB();
 
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+
         class Circle {
-            constructor(radius, color) {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
                 this.radius = radius;
                 this.color = color;
             }
@@ -65,13 +73,21 @@
                 alert('hinh tron co ban kinh ' + this.radius + 
                 ' va mau la ' + this.color)
             }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                // ctx.stroke();
+                ctx.closePath();
+            }
         }
 
-        let c1 = new Circle(20, 'red');
-        let c2 = new Circle(30, 'black');
+        let c1 = new Circle(200, 120, 20, 'red');
+        let c2 = new Circle(120, 120, 60, 'black');
 
-        c1.getInfo();
-        c2.getInfo();
+        c1.draw();
+        c2.draw();
     </script>
 </body>
 </html>

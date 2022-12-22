@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600" style="border: 3px solid #000000"></canvas>
+    <script>
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        
+        // cu phap ve hinh tron : ctx.arc(x, y, radius, startPoint, endPoint);
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+        ctx.fill();
+
+        //cu phap ve hinh chu nhat : ctx.fillRect(x, y, width, height);
+        ctx.fillStyle = 'red';
+        ctx.fillRect(200, 200, 100, 50);
+    </script>
+</body>
+</html>

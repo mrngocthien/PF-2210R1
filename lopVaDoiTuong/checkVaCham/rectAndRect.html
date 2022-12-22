@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000000;"></canvas>
+    <script>
+
+        let gameContext = document.getElementById("game").getContext("2d");
+
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+        };
+        
+        function display() {
+            // let x = +prompt('nhap toa do x:'),
+            //     y = +prompt('nhap toan do y: ');
+            gameContext.beginPath();
+            gameContext.fillStyle='#fa4b2a';
+            gameContext.fillRect(20, 20, width, height);
+        }
+        
+
+        let rect1 = new Rectangle(400, 200),
+            rect2 = new Rectangle(300, 600),
+            width1 = rect1.width,
+            height1 = rect1.height,
+            width2 = rect2.width,
+            height2 = rect2.height;
+        
+        display();
+        display(rect2);
+    </script>
+</body>
+</html>
