@@ -16,110 +16,81 @@
 
      <script>
         class Cat {
-            constructor(name, weight, catDistance) {
-                this.name = name;
-                this.weight = weight;
-                this.catDistance = catDistance;
-            }
-            getSing() {
-                document.write('<br>' + this.name + ': mèo méo meo mèo meo <br>')
-            }
-            getAngry() {
-                document.write('<br>' + this.name + ': áh àh, ông mà bắt được thì mày chết nha con <br>');
-            }
-            getRun(catDistance) {
-                return this.catDistance += 10; 
-            }
-            getEat() {
-                document.write('<br>' + this.name + ': mlem mlem <br>');
-            }
-            getGainWeight(food) {
-                return this.weight += food;
-            }
-        }
-
-        class Mouse {
-            constructor(name, weight, speed, status, mouseDistance) {
+            constructor(name, weight, speed) {
                 this.name = name;
                 this.weight = weight;
                 this.speed = speed;
-                this.status = status;
-                this.mouseDistance = mouseDistance;
             }
-            getSing() {
-                document.write('<br>' + this.name + ': tau là vui lì đòn, ông hoàng thổi nến đây ! <br>')
-            }
-            getRun(mouseDistance) {
-                return this.mouseDistance += 5; 
-            }
-            getRouse() {
-                document.write('<br>' + this.name + ': bố mày chạy nhanh lắm, đó mày bắt được đấy ! <br>');
-            }
-            getLastWords() {
-                document.write('<br>' + this.name + ': Thôi chết rồi, vĩnh biệt cụ <br>');
-            }
-            getBeEated() {
-                return this.status = false;
+            sound() {
+                document.write('meo meo<br>');
             }
 
+            catchedRat() {
+                if (rat.speed < this.speed) {
+                    document.write('bat duoc con chuot ' + rat.name + '<br>');
+                } else {
+                    document.write('khong bat duoc con chuot ' + rat.name + '<br>')
+                }
+            }
+            getEat(rat) {
+                if (rat.isDie == false) {
+                    this.weight += rat.weight;
+                    rat.isDie = true;
+                }
+            }
+            getInfo() {
+                document.write('Meo ' + this.name + ' nang ' + this.weight + ' kg<br>')
+            }
         }
 
-        let cat = new Cat('Tom', 5, 5, 10);
-        let mouse = new Mouse('Jerry', 3, 5, true, 20);
-        
-        function getTellingStories() {
-            setTimeout(() => {
-                document.write('<h2>CÂU CHUYỆN KINH DỊ ĐÊM KHUYA</h2>');
-            }, 1000);
-            setTimeout(() => {
-                document.write('<br>Ngày xửa ngày xưa, xưa ơi là xưa, trong một ngôi làng nọ, có một ch...ú.. chuột nọ. chú tên là ' + mouse.name + ' . Tính tình dở người, hay hát luyên thuyên. Một ngày nọ, trong lúc chú ta đang vừa đi vừa hát: <br>');
-            }, 2500);
-            setTimeout(() => {
-                for (let i = 0; i < 5; i++) {
-                mouse.getSing();
-                };
-            }, 4000);
-            setTimeout(() => {
-                document.write('<br>Bất chợt từ đâu mọc ra một anh mèo tên là: ' + cat.name + '<br>');
-            }, 5500);
-            setTimeout(() => {
-                document.write('<br>Chú mèo ngoác mồm hô vang : <br>');
-            }, 7000);
-            setTimeout(() => {
-                cat.getSing();
-            }, 8500);
-            setTimeout(() => {
-                document.write('<br>Chuột ta rõ ràng rén lắm rồi, nhưng vẫn cố tỏ ra lì đòn và thách thức thằng mèo : <br>');
-            }, 10000);
-            setTimeout(() => {
-                mouse.getRouse();
-            }, 11500);
-            setTimeout(() => {
-                document.write('<br>Thế là không cái ngu nào bằng cái ngu này, thằng mèo điên tiết gào to:  <br>');
-                cat.getAngry();
-            }, 13000);
-            setTimeout(() => {
-                document.write('<br>Cuộc đua bắt đầu..Run... <br>');
-                for (let i = 0; i < 10; i++) {
-                mouse.getRun(i);
-                cat.getRun(i);
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.isDie = false;
+            }
+            sound() {
+                document.write('chit chit<br>')
+            }
+            getInfo() {
+                if (this.isDie == true) {
+                    document.write(' RIP Chuot ' + this.name);
+                } else {
+                    document.write('Chuot ' + this.name + ' nang ' + this.weight + ' kg<br>')
                 }
-            }, 14500);
-            setTimeout(() => {
-                if (cat.catDistance >= mouse.mouseDistance) { 
-                document.write('<br>Do siêng chạy marathon, mèo nhanh chóng bắt kịp và vồ vập em chuột <br>');
-                mouse.getLastWords();
-                let food = mouse.weight;
-                cat.getEat();
-                mouse.getBeEated();
-                if (mouse.status == false) {
-                    document.write('Cuối cùng thì ' + mouse.name + ' đã đi rất xa. ');
-                    document.write('Còn ' + cat.name + ' thì tăng lên được : ' + cat.getGainWeight(food) + 'kg');
-                }
-            }        
-            }, 16000);        
+            }
         }
-        getTellingStories();
+
+        let cat = new Cat('Tom', 6, 3);
+        let rat = new Rat('Jerry', 3, 1);
+
+        function catInfo() {
+            cat.getInfo();
+            cat.sound();
+        }
+        function ratInfo() {
+            rat.getInfo();
+            rat.sound();
+        }
+        function animalsRace(n) {
+            let catDistance = 0,
+                ratDistance = 0;
+            for (let i = 0; i < n; i++) {
+                catDistance += cat.speed;
+                ratDistance += rat.speed;
+            }
+            if (catDistance >= ratDistance) {
+                cat.catchedRat();
+                cat.getEat(rat);
+                cat.getInfo();
+                rat.getInfo();
+            }
+        }
+
+        catInfo();
+        ratInfo();
+        animalsRace(20);
      </script>
 </body>
 </html>
