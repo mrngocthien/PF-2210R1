@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mobile {
+            constructor(name, battery, writing, inbox, send) {
+                this.name = name;
+                this.battery = battery;
+                this.writing = writing;
+                this.inbox = inbox;
+                this.send = send;
+                this.isOff = false;
+            }
+            checkOnOff() {
+                if (this.isOff == false) {
+                    document.write('dien thoai ' + this.name + ' dang bat');
+                    
+                } else {
+                    document.write('dien thoai ' + this.name + ' dang tat');
+                }
+                this.battery--;
+            }
+            turnOnOff() {
+                this.isOff = !this.isOff;
+                this.battery--;
+            }
+            charge() {
+                this.battery++;
+            }
+            receivedMess(mobile) {
+                this.inbox.push(mobile.writing);
+                mobile.send.push(mobile.writing);
+                mobile.writing = '';
+            }
+        }
+    </script>
+</body>
+</html>
