@@ -16,8 +16,9 @@ let snakeX = blockSize * 5,
 // food
 let foodX,
     foodY;
-// game over
-let gameOver = false;
+// game
+let gameOver = false,
+    speedS;
 
 window.onload = function() {
     board = document.getElementById('board');
@@ -27,14 +28,17 @@ window.onload = function() {
 
     getPlaceFood();
     document.addEventListener('keyup', changeDirection);
-    // update();
-    setInterval(update, 1000/10);
     
 }
-getTimer();
-// functions
-function update() {
 
+/* functions */
+
+function startGame() {
+    getTimer();
+    getLevel();
+}
+
+function update() {
     if (gameOver) {
         return;
     }
@@ -80,6 +84,7 @@ function update() {
         }
     }
 }
+
 function changeDirection(e) {
     // check velocity value to avoid snake eats it's body
     if (e.code == 'ArrowUp' && velocityY != 1) {
@@ -100,19 +105,30 @@ function changeDirection(e) {
     }
     
 }
+
 function getPlaceFood() {
     foodX = Math.floor(Math.random() * cols) * blockSize;
     foodY = Math.floor(Math.random() * rows) * blockSize;
 }
+
 function getScore() {
-    document.getElementById('score').innerHTML = score;
+    document.getElementById('score').innerHTML = score + '$';
 }
+
 function getTimer() {
     var sec = 0;
     function pad (val) { return val > 9 ? val : "0" + val; };
     setInterval(() => {
         document.getElementById("seconds").innerHTML = pad(++sec % 60);
         document.getElementById("minutes").innerHTML = pad(parseInt(sec/60, 10));
-        document.getElementById("hours").innerHTML = pad(parseInt(sec/360, 10));
-    }, 1000);
+        document.getElementById("hours").innerHTML = pad(parseInt(sec/3600, 10));
+    }, 10000);
+}
+
+function getLevel() {
+    let a = document.getElementById('cost');
+    difficulty = a.options[a.selectedIndex].value;
+    speedS = difficulty;
+    console.log(speedS);
+    setInterval(update, speedS);
 }

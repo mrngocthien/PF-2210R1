@@ -1,7 +1,16 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    background: wheat;
+    
+}
+.group {
+    display: flex;
+    justify-content: center;
 }
 h4 {
     color: #f00;
+}
+p {
+    font-weight: bold;
 }

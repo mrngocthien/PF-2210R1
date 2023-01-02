@@ -8,10 +8,20 @@
     <title>Snake Game</title>
 </head>
 <body>
-    <h1>Snake Game</h1>
-    <h4>Press arrow key to start game !</h4>
-    <h3>Your Scores: <span id="score">0</span></h3> 
-    <h3>Your time in game: <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></h3> 
+    <h1>Strange Snake Game</h1>
+    <div class="groupA">
+        <p>Please choose your bet amount:
+            <select id="cost">
+                <option value="100">10$</option>
+                <option value="70">50$</option>
+                <option value="40">100$</option>
+            </select>
+            <input id="" type="button" onclick="startGame()" value="Start"/>
+        </p>
+    </div>
+    <h4>Press any arrow keys to start game !</h4>
+    <p>Your earns: <span id="score">0</span></p>
+    <p><span>Your time in game: </span><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>    
     <canvas id="board"></canvas>
     <script src="./app.js"></script>
 </body>
