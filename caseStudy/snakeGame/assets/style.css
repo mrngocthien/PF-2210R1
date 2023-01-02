@@ -1,0 +1,26 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: #000;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 300% 300%;
+  animation: Gradient 25s ease infinite;
+}
+.group {
+  display: flex;
+  justify-content: center;
+}
+p {
+  font-weight: bold;
+}
+@keyframes Gradient {
+  0% {
+      background-position: 0% 50%
+  }
+  50% {
+      background-position: 100% 50%
+  }
+  100% {
+      background-position: 0% 50%
+  }
+}

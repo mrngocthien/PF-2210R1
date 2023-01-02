@@ -1,7 +1,7 @@
 // board
 let blockSize = 25,
     rows = 20,
-    cols = 30,
+    cols = 20,
     score = 0,
     board,
     context;
@@ -34,8 +34,8 @@ window.onload = function() {
 /* functions */
 
 function startGame() {
-    getTimer();
     getLevel();
+    getTimer();
 }
 
 function update() {
@@ -122,7 +122,7 @@ function getTimer() {
         document.getElementById("seconds").innerHTML = pad(++sec % 60);
         document.getElementById("minutes").innerHTML = pad(parseInt(sec/60, 10));
         document.getElementById("hours").innerHTML = pad(parseInt(sec/3600, 10));
-    }, 10000);
+    }, 1000);
 }
 
 function getLevel() {
