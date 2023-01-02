@@ -2,3 +2,6 @@ body {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
+h4 {
+    color: #f00;
+}
