@@ -23,7 +23,6 @@ let gameOver = false,
 window.onload = function() {
     board = document.getElementById('board');
     board.height = rows * blockSize;
-    board.width = cols * blockSize;
     context = board.getContext('2d'); //used for drawing on the board
 
     getPlaceFood();
@@ -129,6 +128,9 @@ function getLevel() {
     let a = document.getElementById('cost');
     difficulty = a.options[a.selectedIndex].value;
     speedS = difficulty;
+    cols = difficulty/2;
+    board.width = cols * blockSize;
+    
     console.log(speedS);
     setInterval(update, speedS);
 }
