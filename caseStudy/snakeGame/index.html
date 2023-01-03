@@ -8,18 +8,36 @@
     <title>Snake Game</title>
 </head>
 <body>
+    <img id="snake" src="./assets/snake.gif" alt="">
+    <img id="rat" src="./assets/rat.gif" alt="">
+    <img id="endGameImg" src="./assets/endGame.gif" alt="" style="display: none; 
+                                                                position: absolute;
+                                                                top: 38%;
+                                                                left: 30%;
+                                                                width: 40%;
+                                                                height: 50%;">
+    <a href="./index.html">
+        <img id="endGameLogo" src="./assets/endGameLogo.gif" alt="" style="display: none; 
+                                                                position: absolute;
+                                                                top: 67%;
+                                                                left: 40%;
+                                                                width: 20%;
+                                                                height: 30%;
+                                                                cursor: pointer;">
+    </a>
+                                                               
     <h1>Strange Snake Game</h1>
     <div class="group">
         <p>Please choose your bet amount:
             <select id="cost">
                 <option value="90">10$</option>
-                <option value="60">50$</option>
-                <option value="30">100$</option>
+                <option value="70">50$</option>
+                <option value="50">100$</option>
             </select>
             <input id="" type="button" onclick="startGame()" value="Start"/>
         </p>
     </div>
-    <h4>Press any arrow keys to start game !</h4>
+    <h4>Press any arrow keys to start game and do not touch the border !</h4>
     <p>Your earns: <span id="score">0</span></p>
     <p><span>Your time in game: </span><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>    
     <canvas id="board"></canvas>

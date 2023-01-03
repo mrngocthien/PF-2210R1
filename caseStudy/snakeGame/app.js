@@ -1,6 +1,6 @@
 // board
 let blockSize = 25,
-    rows = 20,
+    rows = 17,
     cols = 20,
     score = 0,
     board,
@@ -27,14 +27,13 @@ window.onload = function() {
 
     getPlaceFood();
     document.addEventListener('keyup', changeDirection);
-    
+    getTimer();
 }
 
 /* functions */
 
 function startGame() {
     getLevel();
-    getTimer();
 }
 
 function update() {
@@ -74,12 +73,12 @@ function update() {
     // game over conditions
     if (snakeX < 0 || snakeX > cols * blockSize || snakeY < 0 || snakeY > rows * blockSize) {
         gameOver = true;
-        alert('Game Over');
+        endGame();
     }
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-            alert('Game Over');
+            endGame();
         }
     }
 }
@@ -133,4 +132,14 @@ function getLevel() {
     
     console.log(speedS);
     setInterval(update, speedS);
+}
+
+function endGame() {
+    document.getElementById('endGameImg').style.display = 'block';
+    document.getElementById('endGameLogo').style.display = 'block';
+    context.fillStyle = 'black';
+    context.fillRect(foodX, foodY, blockSize, blockSize);
+    setTimeout(() => {
+        document.getElementById('endGameImg').style.display = 'none';
+    },10000);
 }

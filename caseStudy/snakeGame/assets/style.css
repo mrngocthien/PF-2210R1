@@ -6,13 +6,40 @@ body {
   background-size: 300% 300%;
   animation: Gradient 25s ease infinite;
 }
+#snake {
+  position: absolute;
+  top: 0;
+  left: -2%;
+  width: 45%;
+  height: 55%;
+}
+#rat {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 20%;
+  height: 30%;
+}
+
+#endGameLogo {
+  opacity: 1;
+  animation: Opacity 5s ease-in-out infinite;
+}
+
+h1 {
+  color: wheat;
+  animation: Opacity 5s ease-in-out infinite;
+}
+
 .group {
   display: flex;
   justify-content: center;
 }
+
 p {
   font-weight: bold;
 }
+
 @keyframes Gradient {
   0% {
       background-position: 0% 50%
@@ -23,4 +50,14 @@ p {
   100% {
       background-position: 0% 50%
   }
+}
+
+@keyframes Opacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  
 }
