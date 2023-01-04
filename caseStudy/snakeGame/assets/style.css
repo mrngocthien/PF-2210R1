@@ -1,10 +1,10 @@
 body {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  color: #000;
-  background: linear-gradient(-45deg, #e2734b, #b44b79, #23A6D5, #23d555);
+  color: #fff;
+  background: linear-gradient(-45deg, #000, #000, #292422, #09739a, #08922f);
   background-size: 300% 300%;
-  animation: Gradient 25s ease infinite;
+  /* animation: Gradient 15s ease infinite; */
 }
 #snake {
   position: absolute;

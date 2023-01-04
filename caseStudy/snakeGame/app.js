@@ -126,10 +126,22 @@ function getTimer() {
 function getLevel() {
     let a = document.getElementById('cost');
     difficulty = a.options[a.selectedIndex].value;
-    speedS = difficulty;
-    cols = difficulty/2;
-    board.width = cols * blockSize;
     
+    speedS = difficulty; // set new snake speed
+    cols = difficulty/2;
+    board.width = cols * blockSize; // set board width
+
+    let animationTimer = (difficulty-40)/2;
+    let bodyBackground = document.getElementById('body');
+    if (animationTimer == 25) {
+        bodyBackground.style.animation = 'Gradient 4s ease infinite';
+    } else if (animationTimer == 15) {
+        bodyBackground.style.animation = 'Gradient 6s ease infinite';
+    } else {
+        bodyBackground.style.animation = 'Gradient 8s ease infinite';
+    }
+
+    console.log(bodyBackground.style.animation);
     console.log(speedS);
     setInterval(update, speedS);
 }
