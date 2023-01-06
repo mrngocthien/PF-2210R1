@@ -204,10 +204,8 @@ function update() {
 function endGame() {
     document.getElementById('endGameImg').style.display = 'block';
     document.getElementById('endGameLogo').style.display = 'block';
-    
-    setTimeout(() => {
-        document.getElementById('endGameImg').style.display = 'none';
-    },10000);
+    context.fillStyle = 'black';
+    context.fillRect(food.x, food.y, 25, 25);
 }
 
 
