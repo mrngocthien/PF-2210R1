@@ -12,17 +12,17 @@
     <img id="rat" src="./assets/rat.gif" alt="">
     <img id="endGameImg" src="./assets/endGame.gif" alt="" style="display: none; 
                                                                 position: absolute;
-                                                                top: 38%;
-                                                                left: 30%;
-                                                                width: 40%;
-                                                                height: 50%;">
+                                                                top: 39%;
+                                                                left: 40%;
+                                                                width: 25%;
+                                                                height: 40%;">
     <a href="./index.html">
         <img id="endGameLogo" src="./assets/endGameLogo.gif" alt="" style="display: none; 
                                                                 position: absolute;
-                                                                top: 67%;
+                                                                top: 70%;
                                                                 left: 40%;
                                                                 width: 20%;
-                                                                height: 30%;
+                                                                height: 20%;
                                                                 cursor: pointer;">
     </a>
                                                             
@@ -30,18 +30,19 @@
     <div class="group">
         <p>Please choose your bet amount:
             <select id="cost">
+                <option value="100">0$</option>
                 <option value="90">10$</option>
                 <option value="70">50$</option>
                 <option value="50">100$</option>
             </select>
-            <input id="" type="button" onclick="startGame()" value="Start"/>
+            <input id="" type="button" onclick="getLevel()" value="Start"/>
         </p>
     </div>
     <h4>Press any arrow keys to start game and do not touch the border !</h4>
     <p>Your earns: <span id="score">0</span></p>
     <p><span>Your time in game: </span><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>    
-    <canvas id="board"></canvas>
+    <canvas id="board" width="600" height="425"></canvas>
     
-    <script src="./app.js"></script>
+    <script src="./appOpp.js"></script>
 </body>
 </html>
