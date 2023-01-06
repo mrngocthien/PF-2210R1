@@ -161,6 +161,8 @@ function changeDirection(e) {
 
 function update() {
     if (food.x == snake.x && food.y == snake.y) {
+        const music = new Audio('./assets/sounds/eating.wav');
+        music.play();
         snakeBody.push([food.x, food.y]);
         food.getPosition();
         game.getScore();
@@ -207,6 +209,9 @@ function endGame() {
     context.fillStyle = 'black';
     context.fillRect(food.x, food.y, 25, 25);
 }
+
+
+
 
 
 
