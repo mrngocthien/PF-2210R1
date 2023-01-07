@@ -1,4 +1,5 @@
 let context = document.getElementById('board').getContext('2d');
+const music = new Audio('./assets/sounds/eating.wav');
 
 // game object
 class Game {
@@ -39,7 +40,7 @@ class Snake {
         this.speed = speed;
     }
     getBody() {
-        return this.snakeBody = [];
+        return this.snakeBody = snakeBody;
     }
     getPosition() {
         this.x = Math.floor(Math.random() * 20) * 25;
@@ -89,7 +90,6 @@ gameOver = false;
 window.onload = function() {
     getTimer();
     document.addEventListener('keyup', changeDirection);
-    
 }
 getLevel();
 food.getPosition();
@@ -161,13 +161,13 @@ function changeDirection(e) {
 
 function update() {
     if (food.x == snake.x && food.y == snake.y) {
-        const music = new Audio('./assets/sounds/eating.wav');
         music.play();
         snakeBody.push([food.x, food.y]);
         food.getPosition();
+        food.color = getRandomColor();
         game.getScore();
         document.getElementById('score').innerHTML = game.score + '$';
-        console.log(game.score);
+        
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -184,7 +184,9 @@ function update() {
     snake.render();
     
     for (let i = 0; i < snakeBody.length; i++) {
+        context.fillStyle = snake.color;
         context.fillRect(snakeBody[i][0], snakeBody[i][1], 25, 25);
+        
     }
 
     // game over conditions
@@ -199,7 +201,7 @@ function update() {
         }
     }
     if (gameOver) {
-        return
+        return;
     }
 }
 
@@ -208,9 +210,19 @@ function endGame() {
     document.getElementById('endGameLogo').style.display = 'block';
     context.fillStyle = 'black';
     context.fillRect(food.x, food.y, 25, 25);
+    
 }
 
+function getRandomHex(){
+    return Math.floor(Math.random()*255);
+}
 
+function getRandomColor(){
+    var red = getRandomHex();
+    var green = getRandomHex();
+    var blue = getRandomHex();
+    return "rgba(" + red + "," + blue + "," + green +", 1)";
+}
 
 
 
