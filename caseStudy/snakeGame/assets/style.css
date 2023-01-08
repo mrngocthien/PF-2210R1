@@ -38,6 +38,7 @@ h1 {
 
 p {
   font-weight: bold;
+  transition: 0.5s;
 }
 
 @keyframes Gradient {
