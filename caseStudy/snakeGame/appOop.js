@@ -50,6 +50,9 @@ class Snake {
         context.fillStyle = this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
+    died() {
+        context.fillRect(this.x, this.y, 0, 0);
+    }
 }
 
 // food object
@@ -68,6 +71,9 @@ class Food {
     render() {
         context.fillStyle = this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
+    }
+    beEaten() {
+        context.fillRect(this.x, this.y, 0, 0);
     }
 }
 
@@ -163,11 +169,11 @@ function update() {
     if (food.x == snake.x && food.y == snake.y) {
         music.play();
         snakeBody.push([food.x, food.y]);
+        food.beEaten();
         food.getPosition();
         food.color = getRandomColor();
         game.getScore();
         document.getElementById('score').innerHTML = game.score + '$';
-        
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -192,27 +198,26 @@ function update() {
     // game over conditions
     if (snake.x < 0 || snake.x > board.width || snake.y < 0 || snake.y > board.height) {
         gameOver = true;
-        endGame();
     }
     for (let i = 0; i < snakeBody.length; i++) {
         if (snake.x == snakeBody[i][0] && snake.y == snakeBody[i][1]) {
             gameOver = true;
-            endGame();
         }
     }
     if (gameOver) {
-        return;
+        return snake.died(), endGame();
     }
 }
 
 function endGame() {
     document.getElementById('endGameImg').style.display = 'block';
     document.getElementById('endGameLogo').style.display = 'block';
-    context.fillStyle = 'black';
-    context.fillRect(food.x, food.y, 25, 25);
-    
-}
+    document.getElementById('totalScore').style.color = 'yellow';
+    document.getElementById('totalScore').style.fontSize = '1.2em';
 
+    context.fillStyle = getRandomColor();
+    context.fillRect(food.x, food.y, 25, 25);
+}
 function getRandomHex(){
     return Math.floor(Math.random()*255);
 }
